@@ -1,0 +1,35 @@
+<div class="marginl'">
+
+    <button type="button" class="col-sm-1 btn btn-primary fr" routerLink="/">Back</button>
+    <h4>Album of {{userName}} </h4>
+    <table class="col-lg-12 col-md-12 col-sm-12 table table-striped">
+        <thead>
+            <tr>
+
+                <td colspan="3"><b>id</b></td>
+                <td colspan="3"><b>Title</b></td>
+                <td colspan="3"><b>Photos</b></td>
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let album of albums | slice: (page-1) * pageSize : page * pageSize ; let i = index ">
+                <td colspan="3">{{album.id}}</td>
+                <td colspan="3">{{album.title}}</td>    
+                <td colspan="3"><a routerLink="/view-photos/{{album.id}}/{{album.title}}">View</a></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+    <div class="row">
+        <div class="col-sm-2 float-right ml-10">
+            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="albums.length"></ngb-pagination>
+        </div>
+
+    </div>
+
+</div>

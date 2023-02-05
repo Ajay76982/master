@@ -1,0 +1,17 @@
+<h2>Album : {{albumTitle}}</h2>
+
+<button type="button" class="col-sm-1 btn btn-primary fr" routerLink="/">Back</button>
+<div class="r">
+    <div class="column" *ngFor="let image of images">
+        <div class="col-sm-6">
+            {{image.title}}
+        </div>
+        <div class="col-sm-6">
+            <a target="_blank" href="{{image.thumbnailUrl}}">
+                <img src="{{image.url}}" style="width:100%">
+            </a>
+
+        </div>
+    </div>
+
+</div>
